@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Website - Banzi Dube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+   <!-- ===== MODAL BOX ===== -->
+     
+   <div class="modal" id="myModal">
+       <div class="modal-content">
+           <span class="close"><i class="fa fa-times"></i></span>
+           <div class="content-title">
+               <span>Skills</span>
+           </div>
+           <div class="skills-box">
+               <span class="skills-label">HTML</span>
+               <span class="skills-label">CSS</span>
+               <span class="skills-label">Angular</span>
+               <span class="skills-label">JavaScript</span>
+               <span class="skills-label">React</span>
+               <span class="skills-label">Vue</span>
+               <span class="skills-label">PHP</span>
+               <span class="skills-label">MySQL</span>
+           </div>
+       </div>
+   </div>
+
+   <div class="modal" id="myModal1">
+    <div class="modal-content">
+        <span class="close"><i class="fa fa-times"></i></span>
+        <div class="content-title">
+            <span>Service I Offer</span>
+        </div>
+        <div class="desc_content">
+            <p>I work together with my team to offer best services in:</p>
+            <ul class="services_list">
+                <li>Web Development</li>
+                <li>Web Design</li>
+                <li>Web Hosting</li>
+                <li>Software Development</li>
+            </ul>
+         </div>
+      </div>
+   </div>
+
+   <div class="modal" id="myModal2">
+    <div class="modal-content">
+        <span class="close"><i class="fa fa-times"></i></span>
+        <div class="content-title">
+            <span>About Me</span>
+        </div>
+         <p>I am a skilled and creative frontend web developer with a passion for crafting engaging 
+                and user-friendly web interfaces. My expertise lies in transforming design concepts into 
+                responsive and visually appealing websites and web applications. 
+                With a strong foundation in HTML, CSS, and JavaScript, I excel at implementing responsive design, 
+                optimizing performance, and ensuring cross-browser compatibility</p>
+    </div>
+</div>
+
+ 
+
+   <!-- ===== END OF  MODAL BOX ===== -->
+
+   <!-- ===== WRAPPER ===== -->
+    <div class="wrapper">
+        <!-- ===== NAVIGATION BAR ===== -->
+        <nav class="nav">
+            <div class="nav_logo">
+                <span>BD Hub</span>
+            </div>
+            <div class="right_nav">
+                <div class="nav_menu" id="navMenu">
+                    <ul class="link_list">
+                        <div class="close-menu">
+                            <i class="fa fa-times" onclick="menuClose()"></i>
+                        </div>
+                        <li class="list">
+                            <a href="#" class="link">Home</a>
+                        </li>
+                        <li class="list">
+                            <a href="#myModal" class="link" id="myBtn">Skills <i class="fa-solid fa-caret-down"></i></a>
+                            <div class="description_box">
+                                <div class="link_description" id="myDescription">
+                                    <div class="content-title">
+                                        <span>I'm Skilled In</span>
+                                    </div>
+                                    <div class="desc_content">
+                                        <span class="skills-label">HTML</span>
+                                        <span class="skills-label">CSS</span>
+                                        <span class="skills-label">Node</span>
+                                        <span class="skills-label">JavaScript</span>
+                                        <span class="skills-label">React</span>
+                                        <span class="skills-label">Firebase</span>
+                                        <span class="skills-label">Python</span>
+                                        <span class="skills-label">MySQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <a href="#myModal1" class="link" id="myBtn">Services <i class="fa-solid fa-caret-down"></i></a>
+                            <div class="description_box">
+                                <div class="link_description" id="myDescription">
+                                    <div class="content-title">
+                                        <span>Service I Offer</span>
+                                    </div>
+                                    <div class="desc_content">
+                                        <p>I work together with my team to offer best services in:</p>
+                                        <ul class="services_list">
+                                            <li>Web Development</li>
+                                            <li>Web Design</li>
+                                            <li>Web Hosting</li>
+                                            <li>Software Development</li>
+                                            <li>Application Deployment</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <a href="#myModal2" class="link" id="myBtn">About <i class="fa-solid fa-caret-down"></i></a>
+                            <div class="description_box about_box">
+                                <div class="link_description" id="myDescription">
+                                    <div class="content-title">
+                                        <span>About Me</span>
+                                    </div>
+                                    <div class="desc_content">
+                                        <p>Frontend developer crafting responsive, user-friendly web interfaces with HTML, CSS & JavaScript.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="nav_button">
+                    <a href="assets/pdf/Blue.pdf" class="btn"><i class="fa fa-download"></i> <span>Download CV</span></a>
+                </div>
+                <div class="mode">
+                    <div class="moon-sun" id="toggle-switch">
+                        <i class="fa fa-moon" id="moon"></i>
+                        <i class="fa fa-sun" id="sun"></i>
+                    </div>
+                </div>
+                <div class="nav_menu_btn">
+                    <i class="fa fa-bars" onclick="myMenuFunction()"></i>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- ===== MAIN ===== -->
+        <main class="main">
+            <div class="row hero">
+                <div class="col col-1">
+                    <div class="social_icons">
+                         <!-- ===== Icon animated circle ===== -->
+                        <div class="icon_circle"></div>
+
+                        <!-- ===== Social Icons  ===== -->
+                        <a href="https://www.linkedin.com/in/banzi-dube-2a165724b/" target="_blank" style="text-decoration: none;" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin-in icon"></i>
+                        </a>
+                        <a href="https://dribbble.com/Banzi_Dev" target="_blank" style="text-decoration: none;" rel="noopener noreferrer">
+                            <i class="fa-brands fa-dribbble icon"></i>
+                        </a>
+                        <a href="https://github.com/BanziDube" target="_blank" style="text-decoration: none;" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github icon"></i>
+                        </a>
+                        <a href="https://behance.com" target="_blank" style="text-decoration: none;" rel="noopener noreferrer">
+                            <i class="fa-brands fa-behance icon"></i>
+                        </a>
+                    </div>
+                    <!-- ===== HERO TEXT  ===== -->
+
+                    <div class="hero_box">
+                        <div class="hello">
+                            <p>Hello, I Am Banzi Dube, a</p>
+                        </div>
+                        <div class="job">
+                            <span class="multiText"></span>
+                        </div>
+                        <div class="hero_description">
+                            <p>I am a passionate Full-Stack Developer currently interning through Capaciti. I specialize in building responsive web applications using modern technologies like JavaScript, Node.js, and React. I’m driven by curiosity, innovaton, creativity, and the desire to solve real-world problems through code.</p>
+                        </div>
+
+                        <div class="hero_btn">
+                            <a href="contact.html">
+                              <button class="btn_1">Contact Me</button>
+                            </a>
+                        </div>
+
+
+                        
+                    </div>
+                </div>
+                <div class="col col-2">
+                    <div class="circle">
+                        <img src="assets/img/circle.png" alt="">
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/img/1.png" alt="">
+                    </div>
+                    <div class="clients">
+                        <i class="fa-regular fa-user"></i>
+                        <div class="clients-content">
+                            <span>5 +</span>
+                            <p>Deployed Projects</p>
+                        </div>
+                    </div>
+                    <div class="experience">
+                        <i class="fa-regular fa-star"></i>
+                        <div class="xp-content">
+                            <span>2</span>
+                            <p>Years of coding experience</p>
+                        </div>
+                    </div>
+                    <div class="projects">
+                        <i class="fa-solid fa-code"></i>
+                        <div class="projects-content">
+                            <span>10 +</span>
+                            <p>Projects Completed</p>
+                        </div>
+                </div>
+            </div>
+            
+        </main>
+
+
+        <!-- ===== END OF MAIN ===== -->
+
+        <section class="about-section" id="about">
+            <div class="about-container">
+              <div class="about-text" data-aos="fade-right">
+                <h2>About Me</h2>
+                <p>
+                  I’m a passionate full-stack software developer with a keen interest in cloud computing. I enjoy building scalable,
+                  efficient applications using both front-end and back-end technologies. My toolkit includes HTML, CSS, JavaScript, Node.js,
+                  React, and Python. I aspire to specialize in building cloud-native applications that are robust, secure, and performant.
+                </p>
+              </div>
+              <div class="about-image" data-aos="fade-left">
+                <img src="assets/img/banzi.jpg" alt="Profile Picture">
+              </div>
+            </div>
+          
+            <div class="timeline-container" data-aos="fade-up">
+              <h3>My Tech Journey</h3>
+              <ul class="timeline">
+                <li>2020 – Started my BSc in IT at Richfield Graduate Institute of Technology; learned VB.NET, HTML, CSS & JavaScript.</li>
+                <li>2021 – Continued with HTML, CSS, JavaScript, and explored C++ programming.</li>
+                <li>2022 – Majored in Systems Development, focusing on software architecture and development methodologies.</li>
+                <li>2023–2024 – Coded during my spare time, building passion projects and deepening my skillset.</li>
+                <li>2025 – Began my first software development internship at Capaciti, working as a full-stack developer.</li>
+              </ul>
+            </div>
+          
+          <script>
+            AOS.init();
+          </script>
+          
+
+          <section class="skills-section">
+            <h2 class="section-heading">My Skills</h2>
+
+            <div class="proficiency-key">
+                <span><span class="dot expert"></span> Expert</span>
+                <span><span class="dot intermediate"></span> Intermediate</span>
+                <span><span class="dot beginner"></span> Beginner</span>
+              </div>
+              
+          
+            <div class="skills-container">
+              <div class="skill-box">
+                <h3>Front End</h3>
+                <ul>
+                  <li><span class="dot expert"></span><i class="fab fa-html5"></i> HTML5</li>
+                  <li><span class="dot expert"></span><i class="fab fa-css3-alt"></i> CSS3</li>
+                  <li><span class="dot intermediate"></span><i class="fab fa-js"></i> JavaScript (ES6+)</li>
+                  <li><span class="dot intermediate"></span><i class="fab fa-react"></i> React</li>
+                  <li><span class="dot beginner"></span><i class="fab fa-vuejs"></i> Vue.js</li>
+                  <li><span class="dot beginner"></span><i class="fab fa-angular"></i> Angular</li>
+                </ul>
+              </div>
+          
+              <div class="skill-box">
+                <h3>Back End</h3>
+                <ul>
+                  <li><span class="dot expert"></span><i class="fab fa-node-js"></i> Node.js</li>
+                  <li><span class="dot expert"></span><i class="fas fa-server"></i> Express.js</li>
+                  <li><span class="dot beginner"></span><i class="fab fa-php"></i> PHP</li>
+                  <li><span class="dot intermediate"></span><i class="fab fa-python"></i> Python (Flask, Django)</li>
+                  <li><span class="dot beginner"></span><i class="fab fa-java"></i> Java (Spring Boot)</li>
+                </ul>
+              </div>
+          
+              <div class="skill-box">
+                <h3>Database</h3>
+                <ul>
+                  <li><span class="dot expert"></span><i class="fas fa-database"></i> MySQL</li>
+                  <li><span class="dot intermediate"></span><i class="fas fa-database"></i> MongoDB</li>
+                  <li><span class="dot beginner"></span><i class="fas fa-database"></i> PostgreSQL</li>
+                  <li><span class="dot intermediate"></span><i class="fas fa-fire"></i> Firebase</li>
+                </ul>
+              </div>
+          
+              <div class="skill-box">
+                <h3>Time & Task Management</h3>
+                <ul>
+                  <li><span class="dot intermediate"></span><i class="fas fa-check-square"></i> Trello</li>
+                  <li><span class="dot beginner"></span><i class="fas fa-check-square"></i> Jira</li>
+                  <li><span class="dot beginner"></span><i class="fas fa-check-square"></i> Asana</li>
+                  <li><span class="dot beginner"></span><i class="fas fa-check-square"></i> ClickUp</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          
+          <section class="projects-section">
+            <h2>My Projects</h2>
+            <div class="projects-container">
+          
+              <!-- Always visible -->
+              <div class="project-card">
+                <img src="assets/img/glamhive.jpg" alt="GlamHive">
+                <div class="project-overlay">
+                  <div class="project-info">
+                    <h3>GlamHive</h3>
+                    <p>Online booking & e-commerce platform for beauty services.</p>
+                    <div class="project-links">
+                      <a href="#"><i class="fab fa-github"></i></a>
+                      <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="project-card">
+                <img src="assets/img/gemini.png" alt="Gemini Clone">
+                <div class="project-overlay">
+                  <div class="project-info">
+                    <h3>Gemini Clone</h3>
+                    <p>AI assistant clone with futuristic UI and chatbot interface.</p>
+                    <div class="project-links">
+                      <a href="#"><i class="fab fa-github"></i></a>
+                      <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Hidden initially -->
+              <div class="hidden-projects">
+                <div class="project-card">
+                  <img src="images/swiftdesk.png" alt="Swift Desk">
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h3>Swift Desk</h3>
+                      <p>Internal ticketing system for IT departments.</p>
+                      <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="project-card">
+                  <img src="images/swiftplanner.png" alt="Swift Planner">
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h3>Swift Planner</h3>
+                      <p>Event planning app with AI assistant & smart invitations.</p>
+                      <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="project-card">
+                  <img src="images/servicelink.png" alt="Service Link">
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h3>Service Link</h3>
+                      <p>Platform connecting service seekers with professionals.</p>
+                      <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          
+            <!-- View More Button -->
+            <div class="view-more-container">
+              <button class="view-more-btn" onclick="showMoreProjects()">View More</button>
+            </div>
+          </section>
+          
+
+          <section class="certifications-section">
+            <h2>My Certifications</h2>
+            <div class="logo-carousel">
+              <div class="logo-track">
+                <!-- Repeat logos here -->
+                <img src="assets/img/ibm.png" alt="IBM" />
+                <img src="assets/img/aws.png" alt="AWS" />
+                <img src="assets/img/meta.png" alt="Meta" />
+                <img src="assets/img/coursera.png" alt="Coursera" />
+                <img src="assets/img/penn.jpg" alt="UPenn" />
+                <img src="assets/img/london.png" alt="UoL" />
+                <img src="assets/img/starweaver.png" alt="Starweaver" />
+                <img src="assets/img/capaciti.jpg" alt="Capaciti" />
+                <img src="assets/img/gt.jpg" alt="Georgia Tech" />
+                <!-- Duplicate set for smooth infinite scroll -->
+                <img src="assets/img/ibm.png" alt="IBM" />
+                <img src="assets/img/aws.png" alt="AWS" />
+                <img src="assets/img/meta.png" alt="Meta" />
+                <img src="assets/img/coursera.png" alt="Coursera" />
+                <img src="assets/img/penn.jpg" alt="UPenn" />
+                <img src="assets/img/london.png" alt="UoL" />
+                <img src="assets/img/starweaver.png" alt="Starweaver" />
+                <img src="assets/img/capaciti.jpg" alt="Capaciti" />
+                <img src="assets/img/gt.jpg" alt="Georgia Tech" />
+              </div>
+
+              <div class="view-certificates-btn-container">
+                <a href="#certificates-page" class="view-certificates-btn">View Certificates</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="testimonials-section">
+            <h2>Testimonials</h2>
+            <div class="testimonials-container">
+              <div class="testimonial-card">
+                <p>"Banzi's attention to detail and professionalism is unmatched. Working with him was a pleasure!"</p>
+                <h4>- Jane Doe, Team Lead</h4>
+              </div>
+              <div class="testimonial-card">
+                <p>"An outstanding developer! SwiftDesk wouldn’t have been a success without Banzi’s contributions."</p>
+                <h4>- Michael Smith, Project Manager</h4>
+              </div>
+              <div class="testimonial-card">
+                <p>"Banzi is not only technically strong but also a great team player. Highly recommend!"</p>
+                <h4>- Lisa White, Mentor</h4>
+              </div>
+            </div>
+          </section>
+
+          <footer class="site-footer">
+            <div class="footer-content">
+              <p>&copy; 2025 Banzi Dube. All rights reserved.</p>
+              <div class="footer-socials">
+                <a href="https://www.facebook.com/yourusername" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:banzidube8@gmail.com"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </footer>
+          
+          
+          
+          
+         
+         
+
+
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        // Types JS
+        var typingEffect = new Typed(".multiText",{
+            strings: ["Aspiring Cloud Developer","AI-Enthusiast","Full-Stack Developer"],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 2000
+        })
+        // End of typed JS
+    </script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
