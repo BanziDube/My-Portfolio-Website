@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Projects</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .projects-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+     .return-btn {
+      display: inline-block;
+      margin-bottom: 30px;
+      margin-top: 50px;
+      padding: 10px 20px;
+      color: #0f0f0f;
+      background-color: #ffdc16;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .return-btn:hover {
+      background-color: #ffdc16;
+      transform: scale(1.05);
+    }
+
+    .projects-section h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #ffdc16;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(203, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(100, 100, 100, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-info {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .project-info h3 {
+      color: #ffdc16;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .project-info p {
+      color: #e0e0e0;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .project-links a {
+      margin: 0 10px;
+      color: #ffffff;
+      font-size: 22px;
+      transition: transform 0.2s ease;
+    }
+
+    .project-links a:hover {
+      transform: scale(1.2);
+      color: #ffdc16;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="projects-section">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="assets/img/glamhive.jpg" alt="GlamHive">
+        <div class="project-overlay">
+          <div class="project-info">
+            <h3>GlamHive</h3>
+            <p>Online booking & beauty services platform.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/img/gemini.png" alt="Gemini Clone">
+        <div class="project-overlay">
+          <div class="project-info">
+            <h3>Gemini Clone</h3>
+            <p>AI assistant clone with futuristic chatbot UI.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/img/swiftdesk.png" alt="Swift Desk">
+        <div class="project-overlay">
+          <div class="project-info">
+            <h3>Swift Desk</h3>
+            <p>Real-time internal messaging app for IT support.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/img/swiftplanner.png" alt="Swift Planner">
+        <div class="project-overlay">
+          <div class="project-info">
+            <h3>Swift Planner</h3>
+            <p>Event planning tool with secure links and reminders.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/img/toony.png" alt="Cartoon Educational App">
+        <div class="project-overlay">
+          <div class="project-info">
+            <h3>Toony-Brain</h3>
+            <p>Educational app for children to learn animal, object & food names.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/img/servicelink.png" alt="Service Link">
+        <div class="project-overlay">
+          <div class="project-info">
+            <h3>Service Link</h3>
+            <p>Match clients with local service providers fast.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="index.html" class="return-btn"><i class="fas fa-arrow-left"></i> Return Home</a>
+  </section>
+
+</body>
+</html>
