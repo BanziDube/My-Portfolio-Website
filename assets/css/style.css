@@ -39,6 +39,17 @@ body.dark{
 }
 
 /* ===== NAVIGATION BAR ==== */
+
+a{
+ text-decoration: none;
+ color: black;
+ font-weight: 600;
+ transition: .3s;
+}
+a:hover{
+ color: rgb(129, 129, 129);
+ transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 .nav{
  position: fixed;
  top: 0;
