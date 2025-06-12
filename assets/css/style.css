@@ -50,6 +50,9 @@ a:hover{
  color: rgb(129, 129, 129);
  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
+
+
 .nav{
  position: fixed;
  top: 0;
@@ -59,7 +62,7 @@ a:hover{
  justify-content: space-between;
  padding: 0 6vw;
  line-height: 100px;
- background: var(--bg-color);
+ background-color: white;
  z-index: 100;
 }
 .nav_menu_btn{
@@ -72,7 +75,7 @@ a:hover{
  font-size: 40px;
  font-weight: 600;
  font-family: 'Delicious Handrawn', cursive;
- color: var(--second-color);
+ color: black;
 }
 .right_nav{
  display: flex;
@@ -217,7 +220,7 @@ body.dark #sun{
  opacity: 1;
 }
 body.dark #moon{
- opacity: 0;
+ opacity: 1;
 }
 
 /* ===== MODAL BOX ==== */
@@ -303,39 +306,8 @@ body.dark #moon{
 .icon:hover{
  color: var(--orange-color);
 }
-.icon_circle{
- position: absolute;
- top: 20px;
- left: 20px;
- transform: translate(-50%, -50%);
- width: 40px;
- height: 40px;
- border: 2px solid var(--blue-color);
- border-radius: 50%;
- animation: iconSlide 8s ease 1s infinite alternate;
-}
-@keyframes iconSlide {
- 25%{
-     border: 2px solid var(--blue-color);
-     top: 20px;
- }
- 50%{
-     border: 2px solid #C40101;
-     top: 70px;
- }
- 75%{
-     border: 2px solid var(--second-color);
-     top: 115px;
- }
- 100%{
-     border: 2px solid var(--orange-color);
-     top: 160px;
- }
-}
-/* ===== Paused when the user hover on any icon ===== */
-.social_icons:hover .icon_circle{
- animation-play-state: paused;
-}
+
+
 
 /* ===== Hero Text ===== */
 .hero_box{
