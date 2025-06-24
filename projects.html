@@ -1,258 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Projects</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Projects and Concepts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-      background-color: #0f0f0f;
-      color: #ffffff;
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0e0e0e;
+      color: white;
     }
 
-    .projects-section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
+    .hero {
+      background: linear-gradient(to bottom right, #000, #111);
+      padding: 4rem 2rem;
+      text-align: left;
     }
 
-    .return-btn {
-      display: inline-block;
-      margin-bottom: 30px;
-      margin-top: 50px;
-      padding: 10px 20px;
-      color: #0f0f0f;
-      background-color: #ffdc16;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+    .hero h1 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 1rem;
     }
 
-    .return-btn:hover {
-      background-color: #f4c10d;
-      transform: scale(1.05);
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 600px;
     }
 
-    .projects-section h2 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: #ffdc16;
+    .section {
+      padding: 3rem 2rem;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: orange;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid orange;
+      padding-left: 1rem;
     }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 2rem;
     }
 
     .project-card {
-      position: relative;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
       overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(203, 255, 255, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: 0 0 10px rgba(255, 165, 0, 0.1);
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .project-card:hover {
-      transform: translateY(-10px);
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(255, 165, 0, 0.4);
     }
 
-    .project-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(100, 100, 100, 0.85);
+    .project-footer {
+      background-color: rgba(50, 50, 50, 0.9);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-links {
       display: flex;
       justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      gap: 1.2rem;
     }
 
-    .project-card:hover .project-overlay {
-      opacity: 1;
+    .project-links .icon {
+      color: orange;
+      font-size: 1.2rem;
+      transition: transform 0.3s, color 0.3s;
     }
 
-    .project-info {
-      text-align: center;
-      padding: 20px;
-    }
-
-    .project-info h3 {
-      color: #ffdc16;
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .project-info p {
-      color: #e0e0e0;
-      font-size: 15px;
-      margin-bottom: 15px;
-    }
-
-    .project-links a {
-      margin: 0 10px;
-      color: #ffffff;
-      font-size: 22px;
-      transition: transform 0.2s ease;
-    }
-
-    .project-links a:hover {
+    .project-links .icon:hover {
       transform: scale(1.2);
-      color: #ffdc16;
+      color: white;
     }
 
-    .view-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 16px;
-      background-color: #ffdc16;
-      color: #0f0f0f;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
-    .view-btn:hover {
-      background-color: #f4c10d;
-      transform: scale(1.05);
+    @media (max-width: 500px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <section class="projects-section">
-    <h2>My Projects</h2>
+  <section class="hero">
+    <h1>Projects and Concepts</h1>
+    <p>Explore completed solutions, ongoing innovations, and future-forward ideas—all crafted with purpose, code, and creativity.</p>
+  </section>
+
+  <section class="section">
+    <h2>✔️ Completed Projects</h2>
     <div class="projects-grid">
-
-      <div class="project-card">
-        <img src="assets/img/glamhive.jpg" alt="GlamHive">
-        <div class="project-overlay">
-          <div class="project-info">
-            <h3>GlamHive</h3>
-            <p>Online booking & beauty services platform.</p>
-            <div class="project-links">
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <a href="https://bright-unicorn-093b4e.netlify.app/" class="view-btn">View</a>
+      <div class="project-card" style="background-image: url('/assets/img/servicelink.png');">
+        <div class="project-footer">
+          <div class="project-title">Service Link</div>
+          <div class="project-links">
+            <a href="#" class="icon" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="icon" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            <a href="#" class="icon" title="Documentation"><i class="fas fa-file-alt"></i></a>
           </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="assets/img/gemini.png" alt="Gemini Clone">
-        <div class="project-overlay">
-          <div class="project-info">
-            <h3>Gemini Clone</h3>
-            <p>AI assistant clone with futuristic chatbot UI.</p>
-            <div class="project-links">
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <a href="https://github.com/BanziDube/Gemini" class="view-btn">View</a>
+      
+
+      <div class="projects-grid">
+      <div class="project-card" style="background-image: url('/assets/img/Edupath.png');">
+        <div class="project-footer">
+          <div class="project-title">EduPathSA</div>
+          <div class="project-links">
+            <a href="#" class="icon" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="icon" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            <a href="#" class="icon" title="Documentation"><i class="fas fa-file-alt"></i></a>
           </div>
         </div>
       </div>
-
-      <div class="project-card">
-        <img src="assets/img/swiftdesk.png" alt="Swift Desk">
-        <div class="project-overlay">
-          <div class="project-info">
-            <h3>Swift Desk</h3>
-            <p>Real-time internal messaging app for IT support.</p>
-            <div class="project-links">
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <a href="famous-concha-16fc3d.netlify.app" class="view-btn">View</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="project-card">
-        <img src="assets/img/swiftplanner.png" alt="Swift Planner">
-        <div class="project-overlay">
-          <div class="project-info">
-            <h3>Swift Planner</h3>
-            <p>Event planning tool with secure links and reminders.</p>
-            <div class="project-links">
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <a href="https://github.com/BanziDube/Swift-Planner" class="view-btn">View</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="project-card">
-        <img src="assets/img/toony.png" alt="Cartoon Educational App">
-        <div class="project-overlay">
-          <div class="project-info">
-            <h3>Toony-Brain</h3>
-            <p>Educational app for children to learn animal, object & food names.</p>
-            <div class="project-links">
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <a href="https://github.com/BanziDube/The-Toony-Brain-App" class="view-btn">View</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="project-card">
-       <img src="assets/img/servicelink.png" alt="Service Link">
-        <div class="project-overlay">
-          <div class="project-info">
-            <h3>Service Link</h3>
-            <p>Match clients with local service providers fast.</p>
-            <div class="project-links">
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <a href="service-link.netlify.app" class="view-btn">View</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="project-card">
-        <img src="assets/img/intro.png" alt="Swift Desk">
-        <div class="project-overlay">
-          <div class="project-info">
-            <h3>AILA Chatbot</h3>
-            <p>AI Chatbot assistant for helping users learn about AI.</p>
-            <div class="project-links">
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <a href="https://cdn.botpress.cloud/webchat/v3.0/shareable.html?configUrl=https://files.bpcontent.cloud/2025/06/02/09/20250602091731-2XJX7AYJ.json" class="view-btn">View</a>
-          </div>
-        </div>
-      </div>
-
+      <!-- Add more cards with different background images -->
     </div>
-    <a href="index.html" class="return-btn"><i class="fas fa-arrow-left"></i> Return Home</a>
+  </section>
+
+  <section class="section">
+    <h2>🚧 Projects in Progress</h2>
+    <div class="projects-grid">
+      <div class="project-card" style="background-image: url('project2.jpg');">
+        <div class="project-footer">
+          <div class="project-title">SwiftDesk</div>
+          <div class="project-links">
+            <a href="#" class="icon" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="icon" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            <a href="#" class="icon" title="Documentation"><i class="fas fa-file-alt"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>💡 Conceptual Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card" style="background-image: url('project3.jpg');">
+        <div class="project-footer">
+          <div class="project-title">EduPath SA</div>
+          <div class="project-links">
+            <a href="#" class="icon" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="icon" title="Prototype"><i class="fas fa-external-link-alt"></i></a>
+            <a href="#" class="icon" title="Docs"><i class="fas fa-file-alt"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 </body>

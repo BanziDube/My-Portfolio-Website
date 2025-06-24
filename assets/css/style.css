@@ -585,12 +585,12 @@ body.dark #moon{
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 10px;
 }
 
 .about-text {
-  flex: 1 1 50%;
-  padding: 20px;
+  flex: 1 1 60%;
+  padding: 10px;
   text-align: left;
 }
 
@@ -608,19 +608,20 @@ body.dark #moon{
 }
 
 .about-image {
-  flex: 1 1 40%;
+  flex: 1 1 30%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;  /* Aligns image to the right */
   align-items: center;
 }
 
 .about-image img {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;          /* Makes it perfectly round */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 
 /* Timeline */
 .timeline-container {
@@ -790,126 +791,89 @@ body.dark #moon{
 }
 
 .projects-section {
-  margin-top: 35px;
-  padding: 60px 20px;
-  border-radius: 10px;
-  background: linear-gradient(145deg, #111 0%, #1e1e2f 100%);
-  color: #fff;
-  text-align: center;
-}
-
-.projects-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: var(--orange-color);
-}
-
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.project-card {
   position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-.project-card img {
   width: 100%;
-  display: block;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-}
-
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(20, 20, 20, 0.8);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  height: 100vh;
+  background-image: url('/assets/img/ProjectsTile.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
+.projects-section .overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
-.project-info {
-  text-align: center;
+.projects-section .content {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.project-info h3 {
+.text-left {
+  align-self: flex-start;
+  text-align: left;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.projects-heading {
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.projects-description {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* View Button */
+.view-button {
+  padding: 1rem 2rem;
   font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.project-info p {
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-  color: #ccc;
-}
-
-.project-links a {
-  color: #fff;
-  font-size: 1.4rem;
-  margin: 0 10px;
-  transition: color 0.3s ease;
-}
-
-.project-links a:hover {
-  color: var(--orange-color);
-}
-
-.hidden-projects {
-  display: none;
-}
-
-.view-more-container {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.view-more-btn {
-  background-color: var(--orange-color);
+  background-color: orange;
   color: white;
   border: none;
-  padding: 12px 25px;
-  font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
-  animation: floatUpDown 2s ease-in-out infinite;
-  transition: background 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.6);
+  font-weight: bold;
+  transition: transform 0.3s;
 }
 
-.view-more-btn:hover {
-  background-color: #ff6a00;
-}
-
-@keyframes floatUpDown {
+@keyframes float {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-10px);
   }
 }
+
+.view-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 165, 0, 0.8);
+}
+
+
 
 .certifications-section {
   background-color: #f9f9f900;
