@@ -2,183 +2,288 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Projects and Concepts</title>
+  <title>Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0e0e0e;
-      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      overflow-x: hidden;
     }
 
     .hero {
-      background: linear-gradient(to bottom right, #000, #111);
-      padding: 4rem 2rem;
-      text-align: left;
+      background: url('/assets/img/platform.png') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       color: white;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 15px orange;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      color: #ccc;
-      max-width: 600px;
-    }
-
-    .section {
-      padding: 3rem 2rem;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      color: orange;
-      margin-bottom: 1.5rem;
-      border-left: 4px solid orange;
-      padding-left: 1rem;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    .project-tabs {
+      display: flex;
       gap: 2rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .tab {
+      padding: 0.8rem 1.5rem;
+      border: 2px solid orange;
+      background: transparent;
+      color: orange;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tab.active, .tab:hover {
+      background: orange;
+      color: #0d0d0d;
+    }
+
+    .slider-gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transition: transform 0.6s ease;
+      perspective: 1000px;
+      margin-top: 100px;
+      margin-bottom: 130px;
     }
 
     .project-card {
-      height: 300px;
-      background-size: cover;
-      background-position: center;
+      width: 280px;
+      height: 350px;
+      background-color: #1a1a1a;
       border-radius: 12px;
-      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255,165,0,0.3);
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      box-shadow: 0 0 10px rgba(255, 165, 0, 0.1);
-      position: relative;
-      transition: transform 0.3s, box-shadow 0.3s;
+      justify-content: space-between;
+      transform: scale(0.9);
+      opacity: 0.7;
+      transition: transform 0.5s, opacity 0.5s;
     }
 
-    .project-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 20px rgba(255, 165, 0, 0.4);
+    .project-card.active {
+      transform: scale(1.1) translateY(-20px);
+      opacity: 1;
+      z-index: 2;
     }
 
-    .project-footer {
-      background-color: rgba(50, 50, 50, 0.9);
+    .card-content {
       padding: 1rem;
       text-align: center;
     }
 
-    .project-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: white;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-links {
+    .card-footer {
+      background: #2a2a2a;
+      padding: 1rem;
       display: flex;
       justify-content: center;
       gap: 1.2rem;
     }
 
-    .project-links .icon {
+    .card-footer a {
       color: orange;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       transition: transform 0.3s, color 0.3s;
     }
 
-    .project-links .icon:hover {
+    .card-footer a:hover {
       transform: scale(1.2);
       color: white;
     }
 
-    @media (max-width: 768px) {
-      .projects-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: orange;
+      cursor: pointer;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      z-index: 3;
     }
 
-    @media (max-width: 500px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
+    .nav-arrow:hover {
+      background: orange;
+      color: black;
     }
+
+    .left-arrow { left: 20px; }
+    .right-arrow { right: 20px; }
   </style>
 </head>
 <body>
-
-  <section class="hero">
-    <h1>Projects and Concepts</h1>
-    <p>Explore completed solutions, ongoing innovations, and future-forward ideas—all crafted with purpose, code, and creativity.</p>
-  </section>
-
-  <section class="section">
-    <h2>✔️ Completed Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card" style="background-image: url('/assets/img/servicelink.png');">
-        <div class="project-footer">
-          <div class="project-title">Service Link</div>
-          <div class="project-links">
-            <a href="#" class="icon" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" class="icon" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-            <a href="#" class="icon" title="Documentation"><i class="fas fa-file-alt"></i></a>
-          </div>
-        </div>
-      </div>
-
-      
-
-      <div class="projects-grid">
-      <div class="project-card" style="background-image: url('/assets/img/Edupath.png');">
-        <div class="project-footer">
-          <div class="project-title">EduPathSA</div>
-          <div class="project-links">
-            <a href="#" class="icon" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" class="icon" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-            <a href="#" class="icon" title="Documentation"><i class="fas fa-file-alt"></i></a>
-          </div>
-        </div>
-      </div>
-      <!-- Add more cards with different background images -->
+  <div class="hero">
+    <h1>Projects</h1>
+    <div class="project-tabs">
+      <button class="tab active" onclick="selectTab('completed')">Completed</button>
+      <button class="tab" onclick="selectTab('inprogress')">In-Progress</button>
+      <button class="tab" onclick="selectTab('concepts')">Concepts</button>
     </div>
-  </section>
-
-  <section class="section">
-    <h2>🚧 Projects in Progress</h2>
-    <div class="projects-grid">
-      <div class="project-card" style="background-image: url('project2.jpg');">
-        <div class="project-footer">
-          <div class="project-title">SwiftDesk</div>
-          <div class="project-links">
-            <a href="#" class="icon" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" class="icon" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-            <a href="#" class="icon" title="Documentation"><i class="fas fa-file-alt"></i></a>
-          </div>
+    <div class="nav-arrow left-arrow" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></div>
+    <div class="slider-gallery" id="slider">
+      <div class="project-card active">
+        <div class="card-content">
+          <h3>SwiftDesk</h3>
+          <p>A real-time IT ticketing system for streamlined internal support.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" title="Live"><i class="fas fa-external-link-alt"></i></a>
+          <a href="#" title="Docs"><i class="fas fa-file-alt"></i></a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="card-content">
+          <h3>Service-Link</h3>
+          <p>A platform connecting service seekers and providers in local areas.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" title="Live"><i class="fas fa-external-link-alt"></i></a>
+          <a href="#" title="Docs"><i class="fas fa-file-alt"></i></a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="card-content">
+          <h3>EduPath SA</h3>
+          <p>Career-guidance tool mapping learners to local study opportunities.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" title="Live"><i class="fas fa-external-link-alt"></i></a>
+          <a href="#" title="Docs"><i class="fas fa-file-alt"></i></a>
         </div>
       </div>
     </div>
-  </section>
+    <div class="nav-arrow right-arrow" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></div>
+  </div>
 
-  <section class="section">
-    <h2>💡 Conceptual Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card" style="background-image: url('project3.jpg');">
-        <div class="project-footer">
-          <div class="project-title">EduPath SA</div>
-          <div class="project-links">
-            <a href="#" class="icon" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" class="icon" title="Prototype"><i class="fas fa-external-link-alt"></i></a>
-            <a href="#" class="icon" title="Docs"><i class="fas fa-file-alt"></i></a>
-          </div>
+  <script>
+  // Project data for each tab
+  const projectSets = {
+    completed: [
+      {
+        title: "SwiftDesk",
+        desc: "A real-time IT ticketing system for streamlined internal support.",
+        github: "#",
+        live: "#",
+        docs: "#"
+      },
+      {
+        title: "Service-Link",
+        desc: "A platform connecting service seekers and providers in local areas.",
+        github: "#",
+        live: "#",
+        docs: "#"
+      },
+      {
+        title: "EduPath SA",
+        desc: "Career-guidance tool mapping learners to local study opportunities.",
+        github: "#",
+        live: "#",
+        docs: "#"
+      }
+    ],
+    inprogress: [
+      {
+        title: "Swift Planner",
+        desc: "A smart event planning tool with AI-powered suggestions.",
+        github: "#",
+        live: "#",
+        docs: "#"
+      },
+      {
+        title: "AILA Bot",
+        desc: "An AI chatbot assistant helping users navigate platforms.",
+        github: "#",
+        live: "#",
+        docs: "#"
+      }
+    ],
+    concepts: [
+      {
+        title: "BizPulse",
+        desc: "A business intelligence dashboard for performance insights.",
+        github: "#",
+        live: "#",
+        docs: "#"
+      },
+      {
+        title: "Cartoonify App",
+        desc: "Turns images into cartoon-like visuals for kids' learning.",
+        github: "#",
+        live: "#",
+        docs: "#"
+      }
+    ]
+  };
+
+  let currentIndex = 0;
+  let activeTab = "completed";
+
+  function renderProjects(tab) {
+    const slider = document.getElementById("slider");
+    slider.innerHTML = ""; // Clear old projects
+    projectSets[tab].forEach((project, index) => {
+      const card = document.createElement("div");
+      card.className = "project-card" + (index === 0 ? " active" : "");
+      card.innerHTML = `
+        <div class="card-content">
+          <h3>${project.title}</h3>
+          <p>${project.desc}</p>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="card-footer">
+          <a href="${project.github}" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="${project.live}" title="Live"><i class="fas fa-external-link-alt"></i></a>
+          <a href="${project.docs}" title="Docs"><i class="fas fa-file-alt"></i></a>
+        </div>
+      `;
+      slider.appendChild(card);
+    });
+    currentIndex = 0;
+  }
+
+  function moveSlide(direction) {
+    const cards = document.querySelectorAll('.project-card');
+    if (cards.length === 0) return;
+    currentIndex = (currentIndex + direction + cards.length) % cards.length;
+    cards.forEach((card, index) => {
+      card.classList.remove('active');
+      if (index === currentIndex) card.classList.add('active');
+    });
+  }
+
+  function selectTab(tabName) {
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+    document.querySelector(`.tab[onclick*='${tabName}']`).classList.add('active');
+    activeTab = tabName;
+    renderProjects(tabName);
+  }
+
+  // Initial load
+  renderProjects(activeTab);
+</script>
 
 </body>
 </html>
