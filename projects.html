@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Projects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     body {
       margin: 0;
@@ -16,14 +21,14 @@
 
     .hero {
       background: url('/assets/img/platform.png') no-repeat center center/cover;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
       text-align: center;
-      
+      padding: 2rem;
     }
 
     .hero h1 {
@@ -38,6 +43,7 @@
       gap: 2rem;
       justify-content: center;
       margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
 
     .tab {
@@ -56,36 +62,22 @@
       color: #0d0d0d;
     }
 
-    .slider-gallery {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      transition: transform 0.6s ease;
-      perspective: 1000px;
-      margin-top: 100px;
-      margin-bottom: 130px;
+    .swiper {
+      width: 100%;
+      max-width: 1000px;
+      padding: 50px 0;
     }
 
-    .project-card {
-      
-      width: 280px;
-      height: 350px;
-      background-color: #1a1a1a;
+    .swiper-slide {
+      background: #1a1a1a;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255,165,0,0.3);
+      box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transform: scale(0.9);
-      opacity: 0.7;
-      transition: transform 0.5s, opacity 0.5s;
-    }
-
-    .project-card.active {
-      transform: scale(1.1) translateY(-20px);
-      opacity: 1;
-      z-index: 2;
+      width: 280px;
+      height: 350px;
+      margin: 0 auto;
     }
 
     .card-content {
@@ -112,37 +104,15 @@
       color: white;
     }
 
-    .nav-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: orange;
-      cursor: pointer;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 50%;
-      z-index: 3;
+    .not-deployed {
+      display: inline-block;
+      background: rgb(94, 255, 0);
+      color: white;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-top: 0.5rem;
     }
-
-    .nav-arrow:hover {
-      background: orange;
-      color: black;
-    }
-
-    .left-arrow { left: 20px; }
-    .right-arrow { right: 20px; }
-
-  .not-deployed {
-  display: inline-block;
-  background: rgb(94, 255, 0);
-  color: white;
-  font-size: 0.8rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  margin-top: 0.5rem;
-}
-
   </style>
 </head>
 <body>
@@ -153,151 +123,133 @@
       <button class="tab" onclick="selectTab('inprogress')">In-Progress</button>
       <button class="tab" onclick="selectTab('concepts')">Concepts</button>
     </div>
-    <div class="nav-arrow left-arrow" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></div>
-    <div class="slider-gallery" id="slider">
-      <div class="project-card active">
-        <div class="card-content">
-          <h3>SwiftDesk</h3>
-          <p>A real-time IT ticketing system for streamlined internal support.</p>
-        </div>
-        <div class="card-footer">
-          <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" title="Live"><i class="fas fa-external-link-alt"></i></a>
-        </div>
+
+    <!-- Swiper -->
+    <div class="swiper">
+      <div class="swiper-wrapper" id="swiperWrapper">
+        <!-- Slides inserted here by JS -->
       </div>
-      <div class="project-card">
-        <div class="card-content">
-          <h3>Market-Link</h3>
-          <p>A digital market place for SMME's lookinbg to conquer physical and financial boundaries to their next business deal.</p>
-        </div>
-        <div class="card-footer">
-          <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="card-content">
-          <h3>EduPath SA</h3>
-          <p>Career-guidance tool mapping learners to local study opportunities.</p>
-        </div>
-      
-        <div class="project-card">
-        <div class="card-content">
-          <h3>Service-Link</h3>
-          <p>A platform connecting service seekers and providers in local areas.</p>
-        </div>
-        <div class="card-footer">
-          <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
-      </div>
+      <!-- Navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <!-- Pagination dots -->
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="nav-arrow right-arrow" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></div>
   </div>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <script>
-  // Project data for each tab
-  const projectSets = {
-    completed: [
-      {
-        title: "SwiftDesk",
-        desc: "A real-time IT ticketing system for streamlined internal support.",
-        github: "https://github.com/BanziDube/Swift-Desk",
-        live: "https://famous-concha-16fc3d.netlify.app/",
-      },
-     {
-  title: "Market-Link",
-  desc: "A digital market place for SMMEs looking to conquer physical and financial boundaries to their next business deal.",
-  github: "https://github.com/BanziDube/market-linker-app",
-  deployed: false
-},
-      {
-        title: "EduPath SA",
-        desc: "AI based career-guidance tool mapping learners to local study opportunities.",
-        github: "https://github.com/BanziDube/EduPathSA",
-        live: "https://edupathsa.netlify.app/",
-        docs: "#"
-      },
-     {
-  title: "GlamHive",
-  desc: "A platform for booking beauty services.",
-  live: "https://bright-unicorn-093b4e.netlify.app/",
-},
-    ],
-    inprogress: [
-      {
-        title: "Service-Link",
-        desc: "A platform connecting service seekers and providers in local areas.",
-        github: "https://github.com/BanziDube/Service-Link",
-        deployed: false
-      },
-      {
-        title: "AILA Bot",
-        desc: "An AI chatbot assistant helping users navigate platforms.",
-        live: "https://cdn.botpress.cloud/webchat/v3.0/shareable.html?configUrl=https://files.bpcontent.cloud/2025/06/02/09/20250602091731-2XJX7AYJ.json",
-        docs: "#"
-      }
-    ],
-    concepts: [
-      {
-        title: "BizPulse",
-        desc: "A business intelligence dashboard for performance insights.",
-        
-      },
-      {
-        title: "My Recruiter",
-        desc: " An autonomous bot that asseses job readines and trains candidates for interviews.",
-       
-      }
-    ]
-  };
+    const projectSets = {
+      completed: [
+        {
+          title: "SwiftDesk",
+          desc: "A real-time IT ticketing system for streamlined internal support.",
+          github: "https://github.com/BanziDube/Swift-Desk",
+          live: "https://famous-concha-16fc3d.netlify.app/",
+        },
+        {
+          title: "Market-Link",
+          desc: "A digital marketplace for SMMEs looking to conquer physical and financial boundaries to their next business deal.",
+          github: "https://github.com/BanziDube/market-linker-app",
+          deployed: false
+        },
+        {
+          title: "EduPath SA",
+          desc: "AI-based career-guidance tool mapping learners to local study opportunities.",
+          github: "https://github.com/BanziDube/EduPathSA",
+          live: "https://edupathsa.netlify.app/",
+          docs: "#"
+        },
+        {
+          title: "GlamHive",
+          desc: "A platform for booking beauty services.",
+          live: "https://bright-unicorn-093b4e.netlify.app/",
+        },
+        {
+          title: "CodeSnack",
+          desc: "AI-powered application for guiding individuals new to coding.",
+          live: "https://codesnack-dnr3hmxcnmkgnsvjca8ewd.streamlit.app/",
+        },
+      ],
+      inprogress: [
+        {
+          title: "Service-Link",
+          desc: "A platform connecting service seekers and providers in local areas.",
+          github: "https://github.com/BanziDube/Service-Link",
+          deployed: false
+        },
+        {
+          title: "AILA Bot",
+          desc: "An AI chatbot assistant helping users navigate platforms.",
+          live: "https://cdn.botpress.cloud/webchat/v3.0/shareable.html?configUrl=https://files.bpcontent.cloud/2025/06/02/09/20250602091731-2XJX7AYJ.json",
+          docs: "#"
+        }
+      ],
+      concepts: [
+        {
+          title: "BizPulse",
+          desc: "A business intelligence dashboard for performance insights.",
+        },
+        {
+          title: "My Recruiter",
+          desc: "An autonomous bot that assesses job readiness and trains candidates for interviews.",
+        }
+      ]
+    };
 
-  let currentIndex = 0;
-  let activeTab = "completed";
+    let swiperInstance = null;
+    let activeTab = "completed";
 
- function renderProjects(tab) {
-  const slider = document.getElementById("slider");
-  slider.innerHTML = ""; // Clear old projects
-  projectSets[tab].forEach((project, index) => {
-    const card = document.createElement("div");
-    card.className = "project-card" + (index === 0 ? " active" : "");
-    card.innerHTML = `
-      <div class="card-content">
-        <h3>${project.title}</h3>
-        <p>${project.desc}</p>
-        ${project.deployed === false ? `<span class="not-deployed">Not Deployed</span>` : ""}
-      </div>
-      <div class="card-footer">
-        <a href="${project.github}" title="GitHub"><i class="fab fa-github"></i></a>
-        ${project.live ? `<a href="${project.live}" title="Live"><i class="fas fa-external-link-alt"></i></a>` : ""}
-        ${project.docs ? `<a href="${project.docs}" title="Docs"><i class="fas fa-file-alt"></i></a>` : ""}
-      </div>
-    `;
-    slider.appendChild(card);
-  });
-  currentIndex = 0;
-}
+    function renderProjects(tab) {
+      const wrapper = document.getElementById("swiperWrapper");
+      wrapper.innerHTML = "";
 
+      projectSets[tab].forEach(project => {
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide";
+        slide.innerHTML = `
+          <div class="card-content">
+            <h3>${project.title}</h3>
+            <p>${project.desc}</p>
+            ${project.deployed === false ? `<span class="not-deployed">Not Deployed</span>` : ""}
+          </div>
+          <div class="card-footer">
+            ${project.github ? `<a href="${project.github}" title="GitHub"><i class="fab fa-github"></i></a>` : ""}
+            ${project.live ? `<a href="${project.live}" title="Live"><i class="fas fa-external-link-alt"></i></a>` : ""}
+            ${project.docs ? `<a href="${project.docs}" title="Docs"><i class="fas fa-file-alt"></i></a>` : ""}
+          </div>
+        `;
+        wrapper.appendChild(slide);
+      });
 
-  function moveSlide(direction) {
-    const cards = document.querySelectorAll('.project-card');
-    if (cards.length === 0) return;
-    currentIndex = (currentIndex + direction + cards.length) % cards.length;
-    cards.forEach((card, index) => {
-      card.classList.remove('active');
-      if (index === currentIndex) card.classList.add('active');
-    });
-  }
+      if (swiperInstance) swiperInstance.destroy(true, true);
 
-  function selectTab(tabName) {
-    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-    document.querySelector(`.tab[onclick*='${tabName}']`).classList.add('active');
-    activeTab = tabName;
-    renderProjects(tabName);
-  }
+      swiperInstance = new Swiper('.swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    }
 
-  // Initial load
-  renderProjects(activeTab);
-</script>
+    function selectTab(tabName) {
+      document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+      document.querySelector(`.tab[onclick*='${tabName}']`).classList.add("active");
+      activeTab = tabName;
+      renderProjects(tabName);
+    }
 
+    // Initial load
+    renderProjects(activeTab);
+  </script>
 </body>
 </html>
