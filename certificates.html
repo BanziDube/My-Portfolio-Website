@@ -36,16 +36,33 @@
 
         .cards-container {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            overflow-x: auto;
             gap: 30px;
             padding: 20px 40px;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #0077b6 #f0f2f5;
+        }
+
+        .cards-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .cards-container::-webkit-scrollbar-track {
+            background: #f0f2f5;
+        }
+
+        .cards-container::-webkit-scrollbar-thumb {
+            background: #0077b6;
+            border-radius: 4px;
         }
 
         .card {
             width: 250px;
             height: 320px;
             perspective: 1000px;
+            flex: 0 0 auto;
         }
 
         .card-inner {
@@ -97,11 +114,28 @@
             color: #fff;
             transform: rotateY(180deg);
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
             text-align: center;
             font-size: 1em;
+        }
+
+        .view-button {
+            background: #fff;
+            color: #0077b6;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .view-button:hover {
+            background: #f0f2f5;
         }
     </style>
 </head>
@@ -119,7 +153,8 @@
                     <div class="title">Introduction to Web Development with HTML, CSS, JavaScript</div>
                 </div>
                 <div class="card-back">
-                    This certification covers the fundamentals of HTML5, CSS3 and Javascript for modern web development.
+                    <p>This certification covers the fundamentals of HTML5, CSS3 and Javascript for modern web development.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
@@ -132,13 +167,10 @@
                     <div class="title">React Basics</div>
                 </div>
                 <div class="card-back">
-                    Learn essential JavaScript skills for interactivity and dynamic front-end applications.
+                    <p>Learn essential JavaScript skills for interactivity and dynamic front-end applications.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
-        </div>
-
-        <!-- Card 3 -->
-        
         </div>
     </div>
 
@@ -151,7 +183,8 @@
                     <div class="title">Developing Back-End Apps with Node.js and Express</div>
                 </div>
                 <div class="card-back">
-                    Covers backend development using Node.js, Express, and building RESTful APIs.
+                    <p>Covers backend development using Node.js, Express, and building RESTful APIs.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
@@ -163,8 +196,8 @@
                     <div class="title">Introduction to Python Programming</div>
                 </div>
                 <div class="card-back">
-                  This course teaches the basics of programming using Python, covering key concepts like variables, conditionals, loops, functions, and data structures. Learners will also practice using tools to write and run Python code 
-                  and gain the skills to build complete Python programs that solve real-world problems.
+                    <p>This course introduces Python programming fundamentals and tools, enabling learners to build practical programs to solve real-world problems.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
@@ -176,9 +209,8 @@
                     <div class="title">Developing AI Applications with Python and Flask</div>
                 </div>
                 <div class="card-back">
-                    This course teaches how to develop Python applications from start to finish, including writing modules, testing, and packaging code according to PEP8 standards. Learners will build and deploy web apps with Flask and gain hands-on experience creating 
-                    AI-powered applications using IBM Watson and deploying them to a web server.
-                    
+                    <p>This course covers end-to-end Python app development, web app creation with Flask, and building and deploying AI applications using IBM Watson.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
@@ -193,7 +225,8 @@
                     <div class="title">AWS Cloud Practitioner</div>
                 </div>
                 <div class="card-back">
-                    The AWS Cloud Practitioner certification covers basic cloud concepts, core AWS services, security, and pricing, providing a solid foundation for anyone new to AWS.
+                    <p>The AWS Cloud Practitioner certification covers basic cloud concepts, core AWS services, security, and pricing, providing a solid foundation for anyone new to AWS.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
@@ -205,8 +238,8 @@
                     <div class="title">Introduction to Machine Learning on AWS</div>
                 </div>
                 <div class="card-back">
-                    This course teaches how to distinguish AI, machine learning, and deep learning, choose the right AWS machine learning services for various needs,
-                     and build, train, and deploy machine learning models.
+                    <p>This course teaches how to distinguish AI, machine learning, and deep learning, choose the right AWS machine learning services for various needs, and build, train, and deploy machine learning models.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
@@ -218,36 +251,78 @@
                     <div class="title">Machine Learning with Python</div>
                 </div>
                 <div class="card-back">
-                   This course covers key machine learning concepts and roles, teaches core algorithms with Python and scikit-learn,
-                    and guides learners in evaluating models and building end-to-end solutions on real-world data.
+                    <p>This course covers key machine learning concepts and roles, teaches core algorithms with Python and scikit-learn, and guides learners in evaluating models and building end-to-end solutions on real-world data.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="card">
+
+        <div class="card">
             <div class="card-inner">
                 <div class="card-front">
-                    <img src="/assets/img/Google-Cloud-Symbol.webp" alt="ML Python">
-                    <div class="title">Introduction to Generative AI</div>
+                    <img src="/assets/img/DS.jpg" alt="Data Science">
+                    <div class="title">Python for Data Science, AI & Development</div>
                 </div>
                 <div class="card-back">
-                   This course teaches what generative AI is, how it works, the types of models used, and its various applications.
+                    <p>The course teaches Python programming fundamentals, data handling with Pandas and Numpy, and web data extraction using APIs and web scraping.</p>
+                    <button class="view-button">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="/assets/img/Everyone.jfif" alt="AI">
+                    <div class="title">AI for Everyone</div>
+                </div>
+                <div class="card-back">
+                    <p>An introduction to artificial intelligence concepts, applications, and their impact on business and society.</p>
+                    <button class="view-button">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="/assets/img/pyflask.jfif" alt="Dev AI">
+                    <div class="title">Developing AI Applications with Python and Flask</div>
+                </div>
+                <div class="card-back">
+                    <p>This course covers the Python app development lifecycle, writing modular and tested code, building web apps with Flask, and deploying AI-powered applications using IBM Watson and Flask.</p>
+                    <button class="view-button">View</button>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="/assets/img/gen.webp" alt="Gen AI">
+                    <div class="title">Generative AI with Large Language Models</div>
+                </div>
+                <div class="card-back">
+                    <p>This course provides practical knowledge of generative AI, insights into current research and business applications, and guidance from AWS AI experts.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
     </div>
-    
 
-    <h3 class="headings">Proffesional Skills</h3>
+    <h3 class="headings">Professional Skills</h3>
     <div class="cards-container">
         <div class="card">
             <div class="card-inner">
                 <div class="card-front">
-                    <img src="https://source.unsplash.com/250x250/?communication" alt="Communication">
-                    <div class="title">Communication Skills</div>
+                    <img src="/assets/img/pres.jpg" alt="Communication">
+                    <div class="title">Verbal Communications and Presentation Skills</div>
                 </div>
                 <div class="card-back">
-                    Learn techniques for clear, confident, and effective professional communication.
+                    <p>This course helps you develop clear, persuasive communication, engage audiences, and deliver impactful presentations with strong speaking skills.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
@@ -255,11 +330,12 @@
         <div class="card">
             <div class="card-inner">
                 <div class="card-front">
-                    <img src="https://source.unsplash.com/250x250/?leadership" alt="Leadership">
-                    <div class="title">Leadership</div>
+                    <img src="/assets/img/discussion.jpg" alt="Leadership">
+                    <div class="title">Active Listening: Enhancing Communication Skills</div>
                 </div>
                 <div class="card-back">
-                    Training for developing leadership qualities, team management, and strategic thinking.
+                    <p>This course teaches active listening skills, interpreting nonverbal cues, handling difficult conversations, and practicing respectful, cross-cultural communication.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
@@ -267,11 +343,25 @@
         <div class="card">
             <div class="card-inner">
                 <div class="card-front">
-                    <img src="https://source.unsplash.com/250x250/?time-management" alt="Time Management">
-                    <div class="title">Time Management</div>
+                    <img src="/assets/img/time-management-1024x896.webp" alt="Time Management">
+                    <div class="title">Work Smarter, Not Harder: Time Management for Personal & Professional Productivity</div>
                 </div>
                 <div class="card-back">
-                    Certification in prioritizing tasks and improving productivity through time management.
+                    <p>This course helps you plan for personal and professional goals, overcome time management challenges, handle crises calmly, and use resources efficiently.</p>
+                    <button class="view-button">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="/assets/img/emotional intelligence.jpg" alt="Project Management">
+                    <div class="title">Emotional Intelligence</div>
+                </div>
+                <div class="card-back">
+                    <p>This course develops emotional intelligence for the workplace, teaching you to understand emotions, respond effectively, and apply emotional reasoning, with practical tools and exercises for handling complex situations confidently.</p>
+                    <button class="view-button">View</button>
                 </div>
             </div>
         </div>
