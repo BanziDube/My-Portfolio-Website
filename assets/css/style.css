@@ -316,12 +316,12 @@ body.dark #moon{
  flex-direction: column;
 }
 .hero_box .hello{
- font-size: 25px;
+ font-size: 45px;
  font-weight: 500;
  margin-bottom: 10px;
 }
 .hero_box .job{
- font-size: 45px;
+ font-size: 25px;
  font-weight: 700;
  color: var(--second-color);
  margin-bottom: 10px;
