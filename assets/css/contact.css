@@ -2,10 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #ff470f, #f47f51, #fbbc35, #ffffff);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
@@ -20,10 +21,25 @@ body {
     100% {
         background-position: 0% 50%;
     }
+}   
+
+.contact-header{
+    text-align: center;
+    color: white;
+}
+
+.contact-header h1{
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.contact-header p{
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .contact-container{
-    height: 100vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -107,4 +123,13 @@ body {
     .contact-right{
         display: none;
     }
+}
+
+.contact-buttons{
+    display: flex;
+    gap: 130px;
+}
+.contact-buttons button:hover{
+    background: linear-gradient( #aa9903, #db7622); 
+    transform: scale(1.05);
 }

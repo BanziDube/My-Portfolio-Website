@@ -602,7 +602,7 @@ body.dark #moon{
 }
 
 .about-text p {
-  font-size: 18px;
+  font-size: 16px;
   color: #333;
   line-height: 1.6;
   max-width: 500px;
@@ -627,7 +627,7 @@ body.dark #moon{
 /* Timeline */
 .timeline-container {
   max-width: 900px;
-  margin: 60px auto 0;
+  margin: 120px auto 100px;
   padding: 20px;
 }
 
@@ -763,6 +763,11 @@ body.dark #moon{
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.skill-box li img {
+  width: 20px;
+  height: 20px;
 }
 
 /* Dot styles */
@@ -938,8 +943,8 @@ body.dark #moon{
 }
 
 .view-certificates-btn:hover {
-  background-color: #e95e00; /* darker orange */
   transform: translateY(-4px);
+  color: white
 }
 
 .testimonials-section {
